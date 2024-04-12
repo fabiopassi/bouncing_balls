@@ -81,7 +81,7 @@ plt.xlabel("x")
 plt.ylabel("y")
  
 # Loop
-step_plot = 10
+step_plot = 7
 for k in range(0, len(traj), step_plot):
 
     # Update circle
@@ -94,7 +94,7 @@ for k in range(0, len(traj), step_plot):
         circ.append(tmp)
  
     # drawing updated values
-    figure.canvas.draw()
+    #figure.canvas.draw()
     figure.canvas.flush_events()
  
     time.sleep(0.008)
