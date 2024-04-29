@@ -16,7 +16,7 @@ import random
 y_floor = 0
 x_right_wall = 3
 x_left_wall = - x_right_wall
-y_max = 2 * x_right_wall        
+y_max = 2 * x_right_wall
 
 # Other variables
 v_max = 7                       # Maximum initial velocity
@@ -32,7 +32,7 @@ r = np.zeros((N,2))                                                     # Positi
 r[:,0] = (np.random.rand(N) - 0.5) * 2 * (x_right_wall - 2*R)           # x
 r[:,1] = np.arange(1,N+1) * y_max/(2*(N+1))                             # y
 v = np.zeros((N,2))                                                     # Velocity
-v[:,0] = v_max * (np.random.rand(N) + np.ones(N)) / 2                   # vx                    
+v[:,0] = v_max * (np.random.rand(N) + np.ones(N)) / 2                   # vx
 a = np.zeros((N,2))                                                     # Acceleration
 a[:,1] = - g * np.ones(N)
 
@@ -51,7 +51,6 @@ for t in range(steps) :
 
     # Save coordinates
     traj.append(r)
-
 
 # -------------------       Plot        --------------------------
 
@@ -81,7 +80,7 @@ plt.xlabel("x")
 plt.ylabel("y")
  
 # Loop
-step_plot = 7
+step_plot = 5
 for k in range(0, len(traj), step_plot):
 
     # Update circle
@@ -96,6 +95,4 @@ for k in range(0, len(traj), step_plot):
     # drawing updated values
     #figure.canvas.draw()
     figure.canvas.flush_events()
- 
-    time.sleep(0.008)
 
